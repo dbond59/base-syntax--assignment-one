@@ -3,9 +3,9 @@ import React from 'react';
 
 // Created this UserInput Component that holds an imput element
 // const tells me that the var userinput will never change
-const userinput = () => {
+const userinput = (props) => {
     return ( 
-    <input type="text"/>
+    <input type="text" onClick={props.newName} onChange={props.newInputtedName}/>
     )
 };
 

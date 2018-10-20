@@ -12,10 +12,14 @@ class App extends Component {
   }
 
   // created an event-handler method that will manipulate the state and connect to the button below and change the username that I assign
-  changeNameHandler = () => {
+  changeNameHandler = (newClickTextBoxName) => {
     // console.log('double clicked named changed');
     // use this.setState method, it will merge what we define here with our existing state!
-    this.setState({username: "Johnathan"})
+    this.setState({username: newClickTextBoxName})
+  }
+
+  newNameHandler = (event) => {
+    this.setState({username: event.target.value}) 
   }
 
   // this render method will be what the page renders as soon that app is launched
@@ -25,11 +29,12 @@ class App extends Component {
   render() {
     return(
       <div className="App">
-      <UserInput/>
-      <button onDoubleClick={this.changeNameHandler}>Double Click</button>
+      <UserInput
+        newInputtedName={this.newNameHandler}
+        newName={this.changeNameHandler.bind(this, "Jeremy")}/>
+      <button onDoubleClick={this.changeNameHandler.bind(this, "Luke")}>Double Click</button>
       <UserOutput 
-        username={this.state.username}
-        dblClicked={this.changeNameHandler}/>
+        username={this.state.username}/> 
       <UserOutput 
         username={this.state.username}/>
       <UserOutput 
