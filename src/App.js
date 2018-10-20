@@ -31,7 +31,8 @@ class App extends Component {
       <div className="App">
       <UserInput
         newInputtedName={this.newNameHandler}
-        newName={this.changeNameHandler.bind(this, "Jeremy")}/>
+        newName={this.changeNameHandler.bind(this, "Jeremy")}
+        currentName={this.state.username}/>
       <button onDoubleClick={this.changeNameHandler.bind(this, "Luke")}>Double Click</button>
       <UserOutput 
         username={this.state.username}/> 
@@ -54,7 +55,7 @@ export default App;
 // ~ Pass a username (of your choice) to UserOutput via props and display it there
 // ~ Add state to the App component (=> the username) and pass the username to the UserOutput component
 // ~ Add a method to manipulate the state (=> an event-handler method)
-// Pass the event-handler method reference to the UserInput component and bind it to the input-change event
-// Ensure that the new input entered by the user overwrites the old username passed to UserOutput
-// Add two-way-binding to your input (in UserInput) to also display the starting username
+// ~ Pass the event-handler method reference to the UserInput component and bind it to the input-change event
+// ~ Ensure that the new input entered by the user overwrites the old username passed to UserOutput
+// ~ Add two-way-binding to your input (in UserInput) to also display the starting username
 // Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets
