@@ -26,10 +26,14 @@ class App extends Component {
     return(
       <div className="App">
       <UserInput/>
-      <button onDoubleClick={this.changeNameHandler}>Change Name</button>
-      <UserOutput username={this.state.username}/>
-      <UserOutput username={this.state.username}/>
-      <UserOutput username={this.state.username}/>
+      <button onDoubleClick={this.changeNameHandler}>Double Click</button>
+      <UserOutput 
+        username={this.state.username}
+        dblClicked={this.changeNameHandler}/>
+      <UserOutput 
+        username={this.state.username}/>
+      <UserOutput 
+        username={this.state.username}/>
       </div>
     );
   }
