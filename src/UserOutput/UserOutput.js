@@ -1,5 +1,8 @@
+// dont forget to import the React into your new components
 import React from 'react';
 
+// Created this UserOutput component that holds 2 paragraphs <p> 
+// The usage of the props argument allows me to take attributes from another component and user them here
 const useroutput = (props) => {
     return(
     <div>
@@ -9,4 +12,5 @@ const useroutput = (props) => {
     )
 }
 
+// export default because you only have one thing to export out of the file
 export default useroutput;

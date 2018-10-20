@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
+// make sure you import other components that you will use code from (use this format below)
 import UserInput from './UserInput/UserInput';
 import UserOutput from './UserOutput/UserOutput';
 
 class App extends Component {
 
+  // used the state keyword to use dynamic code within this component
   state = {
     username: "Deyshawn"
   }
 
+  // created an event-handler method that will manipulate the state and connect to the button below and change the username that I assign
   changeNameHandler = () => {
     // console.log('double clicked named changed');
     // use this.setState method, it will merge what we define here with our existing state!
     this.setState({username: "Johnathan"})
   }
 
+  // this render method will be what the page renders as soon that app is launched
+  // below I took the imported components and added there contents to the render method so they are visible
+  // also added a button with an onDoubleClick action that takes in the changeNameHandler method
+  // for the userOutPut I added the username prop that then uses the state keyword to grab information
   render() {
     return(
       <div className="App">
