@@ -27,13 +27,26 @@ class App extends Component {
   // also added a button with an onDoubleClick action that takes in the changeNameHandler method
   // for the userOutPut I added the username prop that then uses the state keyword to grab information
   render() {
+    
+    const btnStyle = {
+      backgroundColor: 'lightblue',
+      font: 'inherit',
+      border: '2px dotted black',
+      padding: '8px',
+      margin: '5px 0 0 10px',
+      cursor: 'pointer',
+      boxShadow: '3px 3px 4px darkgray'
+    }
+
     return(
       <div className="App">
       <UserInput
         newInputtedName={this.newNameHandler}
         newName={this.changeNameHandler.bind(this, "Jeremy")}
         currentName={this.state.username}/>
-      <button onDoubleClick={this.changeNameHandler.bind(this, "Luke")}>Double Click</button>
+      <button 
+      style={btnStyle}
+      onDoubleClick={this.changeNameHandler.bind(this, "Luke")}>Double Click</button>
       <UserOutput 
         username={this.state.username}/> 
       <UserOutput 
@@ -58,4 +71,4 @@ export default App;
 // ~ Pass the event-handler method reference to the UserInput component and bind it to the input-change event
 // ~ Ensure that the new input entered by the user overwrites the old username passed to UserOutput
 // ~ Add two-way-binding to your input (in UserInput) to also display the starting username
-// Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets
+// ~ Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets
