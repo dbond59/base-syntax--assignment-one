@@ -13,6 +13,7 @@ const userInputStyle = {
 // const tells me that the var userinput will never change
 // added two-way binding being able to listen to changes and output the name as the value for the input
 // can't add a vaule prop without allowing yourself to react to changes so you need onChange before value
+// I really dont need the onClick function but kept it anyways to show the onClick event useing the setState keyword
 const userinput = (props) => {
     return ( 
     <input style={userInputStyle} type="text" onClick={props.newName} onChange={props.newInputtedName} value={props.currentName}/>
